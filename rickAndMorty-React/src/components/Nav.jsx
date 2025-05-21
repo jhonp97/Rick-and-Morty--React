@@ -4,19 +4,22 @@ import Lugares from '@/pages/Lugares'
 import { useState } from "react";
 
 const Nav = () => {
-    const [ page, setPage] = useState("characters")
+    const [page, setPage] = useState("characters")
     return (
+    <>
         <header>
             <nav>
-                <button onClick={()=>setPage("characters")}>Personajes</button>
-                <button onClick={()=>setPage("locations")}>Lugares</button>
-                <button onClick={()=>setPage("episodes")}>Episodios</button>
+                <button onClick={() => setPage("characters")}>Personajes</button>
+                <button onClick={() => setPage("locations")}>Lugares</button>
+                <button onClick={() => setPage("episodes")}>Episodios</button>
             </nav>
-            {page== "characters" && <Personajes/>}
-            {page== "locations" && <Lugares/>}
-            {page== "episodes" && <Episodios/>}
-            
+
         </header>
+            {page == "characters" && <Personajes />}
+            {page == "locations" && <Lugares />}
+            {page == "episodes" && <Episodios />}
+    </>
+
     );
 }
 
