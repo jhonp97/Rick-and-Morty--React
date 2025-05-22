@@ -97,6 +97,8 @@ const Personajes = () => {
         <CardPj key={p.id} {...p} />
     ))
 
+    console.log(info.count)
+
     return (
         <main className="Personajes">
             <h2 className="Personaje-title">Personajes</h2>
@@ -161,9 +163,10 @@ const Personajes = () => {
 
             </div>
 
-             <div className="Pages">              
+             <div className="Pages">
+                             
             <button onClick={prev}> Anterior</button>
-            {page}
+            {page} 
             <button onClick={next}>siguiente</button>
             </div> 
 
