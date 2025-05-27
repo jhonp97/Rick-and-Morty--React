@@ -165,12 +165,12 @@ const Personajes = () => {
 
              <div className="Pages">
                              
-            <button onClick={prev}> Anterior</button>
+            <button onClick={prev} disabled={page===1}> Anterior</button>
             {page} 
             <button onClick={next}>siguiente</button>
             </div> 
 
-            <section className="Card" style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+            <section className="Card">
 
                 {loading ? <p>Cargando...</p> : cards}
                 {error && <p style={{ color: "red" }}>Error: {error}</p>}

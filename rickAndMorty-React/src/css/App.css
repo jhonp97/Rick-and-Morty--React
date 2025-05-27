@@ -1,5 +1,11 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #root {
-  max-width: 1280px;
+  width: 100%;;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -10,19 +16,48 @@
   gap: 30px;
 }
 
-.Personajes {
+.Header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Nav{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+
+}
+
+.Personajes,
+.Location {
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1rem
 }
 
-.Personaje-title {
+.Personaje-title,
+.Location-title {
   font-size: 3rem;
   font-family: monospace;
 }
+.Card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
 
+}
 .Search {
   box-shadow: 0px 0px 15px white;
   padding: 18PX;
@@ -60,3 +95,12 @@
   font-size: 1rem;
 }
 
+.Card-location {
+  padding: 10px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: solid 2px gray;
+  border-radius: 8px;
+  box-shadow: 0 0 15px gray;
+}

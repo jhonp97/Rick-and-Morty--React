@@ -7,8 +7,8 @@ const Nav = () => {
     const [page, setPage] = useState("characters")
     return (
     <>
-        <header>
-            <nav>
+        <header className="Header">
+            <nav className="Nav">
                 <button onClick={() => setPage("characters")}>Personajes</button>
                 <button onClick={() => setPage("locations")}>Lugares</button>
                 <button onClick={() => setPage("episodes")}>Episodios</button>
