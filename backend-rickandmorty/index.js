@@ -1,0 +1,25 @@
+// app.js
+import 'dotenv/config'; // Carga las variables del .env
+import express from 'express';
+import cors from 'cors';
+import router from './routes/index.routes.js';
+import config from './config.js';
+
+
+const app = express();
+
+app.use(cors());             // Permite solicitudes de distintos orígenes
+app.use(express.json());     // Parsea JSON en las peticiones
+
+// Monta las rutas en la ruta base /api/rickandmorty
+app.use('/api/rickandmorty', router);
+
+// Middleware de manejo de errores: captura errores y responde al cliente
+app.use((error, req, res, next) => {
+  console.error(error);
+  res.status(500).json({ error: error.message });
+});
+
+app.listen(config.port, () => {
+  console.log(`Servidor corriendo en el puerto ${config.port}`);
+});

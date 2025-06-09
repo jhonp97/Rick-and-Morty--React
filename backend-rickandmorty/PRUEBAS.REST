@@ -1,0 +1,10 @@
+###
+# Prueba: Obtener mensaje del endpoint principal
+###
+GET http://localhost:5000/api/rickandmorty
+Content-Type: application/json
+
+###
+# (Opcional) Agrega aquí otras pruebas
+# Si en el futuro defines otros endpoints, puedes agregarlos aquí.
+###

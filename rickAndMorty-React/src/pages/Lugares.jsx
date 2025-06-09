@@ -9,11 +9,15 @@ const Lugares = () => {
 
 
     useEffect(() => {
-        const url = `https://rickandmortyapi.com/api/location?page=${page}`
+        // const url = `https://rickandmortyapi.com/api/location?page=${page}`
+
+
 
         const traerLugares = async () => {
             setLoading(true)
             try {
+                const apiBase = import.meta.env.VITE_API_URL;
+                const url = `${apiBase}/location?page=${page}`;
                 const controller = new AbortController()
                 const option = controller.signal
 
@@ -35,7 +39,7 @@ const Lugares = () => {
         traerLugares()
 
     }, [page])
-   
+
 
     function Ubicaciones() {
         return (
@@ -60,7 +64,7 @@ const Lugares = () => {
             <h2 className="Location-title">Lugares</h2>
 
             <div className="Pages">
-                <button onClick={prev} disabled={page===1}> Anterior</button>
+                <button onClick={prev} disabled={page === 1}> Anterior</button>
                 {page}
                 <button onClick={next}>siguiente</button>
             </div>
