@@ -11,6 +11,6 @@ router.use(logger);
 
 router.get('/', getRickAndMortyMessage);
 
-router.get('/lugares', rickandmortyLugares);
+router.get('/location', rickandmortyLugares);
 
 export default router;

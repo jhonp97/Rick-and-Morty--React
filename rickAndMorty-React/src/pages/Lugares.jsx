@@ -21,7 +21,7 @@ const Lugares = () => {
                 const controller = new AbortController()
                 const option = controller.signal
 
-                const response = await fetch(url, option)
+                const response = await fetch(url, { signal: controller.signal });
                 if (!response.ok) {
                     throw new Error(`error ${response.status} - ${response.statusText}`)
                 }

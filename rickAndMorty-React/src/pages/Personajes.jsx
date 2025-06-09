@@ -57,7 +57,10 @@ const Personajes = () => {
 
                 // const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}${filtro !== "all" ? `&species=${filtro}` : ""}`);
                 // const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}&species=${filtro.species}&status=${filtro.status}&gender=${filtro.gender}`);
-                const response = await fetch(`https://rickandmortyapi.com/api/character?${params.toString()}`)
+                // const response = await fetch(`https://rickandmortyapi.com/api/character?${params.toString()}`)
+                const apiBase = import.meta.env.VITE_API_URL; // Ejemplo: "http://localhost:5000/api"
+                const response = await fetch(`${apiBase}/character?${params.toString()}`);
+
 
 
                 if (!response.ok) {
@@ -163,12 +166,12 @@ const Personajes = () => {
 
             </div>
 
-             <div className="Pages">
-                             
-            <button onClick={prev} disabled={page===1}> Anterior</button>
-            {page} 
-            <button onClick={next}>siguiente</button>
-            </div> 
+            <div className="Pages">
+
+                <button onClick={prev} disabled={page === 1}> Anterior</button>
+                {page}
+                <button onClick={next}>siguiente</button>
+            </div>
 
             <section className="Card">
 
