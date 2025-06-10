@@ -68,7 +68,13 @@ const Lugares = () => {
                 {page}
                 <button onClick={next}>siguiente</button>
             </div>
-            {error && <div>Error al cargar Ubicaciones. <br /><br /> Error:{error}</div>}
+            {error && (
+                <div>
+                    Error al cargar Ubicaciones. <br />
+                    <br /> Error: {error.message}
+                </div>
+            )}
+
             {loading ? <div>Cargando Ubicaciones...</div> : <Ubicaciones />}
 
 

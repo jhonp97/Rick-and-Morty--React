@@ -3,7 +3,7 @@ import 'dotenv/config'; // Carga las variables del .env
 import express from 'express';
 import cors from 'cors';
 import router from './routes/index.routes.js';
-import config from './config.js';
+import config from './config/config.js';
 
 
 const app = express();
@@ -11,8 +11,16 @@ const app = express();
 app.use(cors());             // Permite solicitudes de distintos orígenes
 app.use(express.json());     // Parsea JSON en las peticiones
 
+
+//ruta por fedecto
+app.get("/", (req, res)=>{
+    res.status(200).json({msg:"bienvenidos a mi api Rick And Morty"})
+})
+
 // Monta las rutas en la ruta base /api/rickandmorty
+
 app.use('/api/rickandmorty', router);
+
 
 // Middleware de manejo de errores: captura errores y responde al cliente
 app.use((error, req, res, next) => {

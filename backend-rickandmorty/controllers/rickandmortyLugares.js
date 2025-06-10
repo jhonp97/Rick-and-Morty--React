@@ -1,6 +1,7 @@
 export  const rickandmortyLugares = async (req, res, next)=>{
     try{
-         const apiURL = 'https://rickandmortyapi.com/api/location';
+      const {page }= req.query
+         const apiURL = `https://rickandmortyapi.com/api/location?page=${page}`;
     const response = await fetch(apiURL);
 
     if (!response.ok) {

@@ -3,8 +3,9 @@
 
 export const getRickAndMortyMessage = async (req, res, next) => {
   try {
-    // Ejemplo de petición asíncrona: se consulta la API pública de Rick and Morty.
-    const apiURL = 'https://rickandmortyapi.com/api/character';
+     const params = new URLSearchParams(req.query);
+    
+    const apiURL = `https://rickandmortyapi.com/api/character?${params.toString()}`;
     const response = await fetch(apiURL);
 
     if (!response.ok) {

@@ -9,8 +9,10 @@ const router = express.Router();
 // Aplica el middleware logger a todas las rutas de este router
 router.use(logger);
 
-router.get('/', getRickAndMortyMessage);
+// Para personajes, ruta: /api/rickandmorty/character
+router.get('/character', getRickAndMortyMessage);
 
+// Para ubicaciones, ruta: /api/rickandmorty/location
 router.get('/location', rickandmortyLugares);
 
 export default router;
