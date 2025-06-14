@@ -16,6 +16,8 @@ router.get('/character', getRickAndMortyPersonajes);
 // Para ubicaciones la ruta es: /api/rickandmorty/location
 router.get('/location', rickandmortyLugares);
 
+
+// Ruta oata los episodios
 router.get('/episode', getRickAndMortyEpisodios);
 
 export default router;

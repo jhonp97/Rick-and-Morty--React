@@ -39,9 +39,11 @@ const Episodios = () => {
         return (
             <div className="Card">
                 {episodios.map((item) => (
-                    <article className="Card-location" key={item.id}>
+                    <article className="Card-episodes" key={item.id}>
                         <h2>{item.name}</h2>
                         <img src="https://i0.wp.com/tomatazos.buscafs.com/2025/05/Rick-y-Morty-T8-Poster-2-1-scaled.jpeg?fit=2046,2560&quality=75&strip=all" width={300} alt={item.name} />
+                        <p><strong>{item.air_date}</strong></p>
+                        <p><strong>{item.episode}</strong></p>
                         
                     </article>
                 ))}
@@ -58,7 +60,7 @@ const Episodios = () => {
             <div className="Pages">
                 <button onClick={prev} disabled={page === 1}> Anterior</button>
                 {page}
-                <button onClick={next}>siguiente</button>
+                <button onClick={next} disabled={page ===3}>siguiente</button>
             </div>
             {error && (
                 <div>
