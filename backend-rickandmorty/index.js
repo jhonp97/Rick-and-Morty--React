@@ -8,8 +8,8 @@ import config from './config/config.js';
 
 const app = express();
 
-app.use(cors());             // Permite solicitudes de distintos orígenes
-app.use(express.json());     // Parsea JSON en las peticiones
+app.use(cors());             // Para conectarme sin problemas
+app.use(express.json());     // Para procesar los JSON
 
 
 //ruta por fedecto
@@ -17,12 +17,11 @@ app.get("/", (req, res)=>{
     res.status(200).json({msg:"bienvenidos a mi api Rick And Morty"})
 })
 
-// Monta las rutas en la ruta base /api/rickandmorty
-
+// la ruta base /api/rickandmorty
 app.use('/api/rickandmorty', router);
 
 
-// Middleware de manejo de errores: captura errores y responde al cliente
+// Middleware de manejo de errores
 app.use((error, req, res, next) => {
   console.error(error);
   res.status(500).json({ error: error.message });

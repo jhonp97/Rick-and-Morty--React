@@ -1,7 +1,5 @@
-// controllers/rickandmortyController.js
-// import fetch from 'node-fetch'; // Asegúrate de tener node-fetch instalado o usa la función global fetch en Node 18+
 
-export const getRickAndMortyMessage = async (req, res, next) => {
+export const getRickAndMortyPersonajes = async (req, res, next) => {
   try {
      const params = new URLSearchParams(req.query);
     

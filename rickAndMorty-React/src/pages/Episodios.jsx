@@ -6,6 +6,15 @@ const Episodios = () => {
     const [loading, setLoading]= useState(true)
     const [Episodios, setEpisodios] = useState([])
 
+    const traerEpisodios=async()=>{
+        try{
+
+        }catch(e){
+            console.log(`se ha producido un error: ${e}`)
+        }
+
+    }
+
     return ( 
         <div className="Episodios">
             <h2>Episodios</h2>

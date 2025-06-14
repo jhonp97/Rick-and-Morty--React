@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: aliceblue;
 }
 
 #root {
@@ -59,6 +60,7 @@
 
 }
 .Search {
+  color: black;
   box-shadow: 0px 0px 15px white;
   padding: 18PX;
   display: flex;
@@ -71,6 +73,7 @@
 }
 
 .Search-label {
+  color: rgb(255, 255, 255);
   height: 20px;
   display: flex;
   justify-content: center;
@@ -80,6 +83,7 @@
   font-size: 1.3rem;
 
   & select {
+    color: rgb(0, 0, 0);
     font-size: 1.3rem;
     cursor: pointer;
   }
@@ -103,4 +107,11 @@
   border: solid 2px gray;
   border-radius: 8px;
   box-shadow: 0 0 15px gray;
+}
+
+button{
+  color: black;
+}
+a{
+  color: black;
 }
