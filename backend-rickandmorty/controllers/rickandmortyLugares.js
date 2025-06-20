@@ -1,7 +1,9 @@
+const BASE_URL = process.env.API_BASE_URL
+
 export  const rickandmortyLugares = async (req, res, next)=>{
     try{
       const {page }= req.query
-         const apiURL = `https://rickandmortyapi.com/api/location?page=${page}`;
+         const apiURL = `${BASE_URL}/location?page=${page}`;
     const response = await fetch(apiURL);
 
     if (!response.ok) {

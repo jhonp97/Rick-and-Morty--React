@@ -1,9 +1,10 @@
+const BASE_URL = process.env.API_BASE_URL
 
 export const getRickAndMortyPersonajes = async (req, res, next) => {
   try {
      const params = new URLSearchParams(req.query);
     
-    const apiURL = `https://rickandmortyapi.com/api/character?${params.toString()}`;
+    const apiURL = `${BASE_URL}/character?${params.toString()}`;
     const response = await fetch(apiURL);
 
     if (!response.ok) {

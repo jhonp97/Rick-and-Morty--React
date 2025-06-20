@@ -1,8 +1,9 @@
+const BASE_URL = process.env.API_BASE_URL 
 
 export const getRickAndMortyEpisodios = async (req, res, next) => {
    try{
       const {page }= req.query
-         const apiURL = `https://rickandmortyapi.com/api/episode?page=${page}`;
+         const apiURL = `${BASE_URL}/episode?page=${page}`;
     const response = await fetch(apiURL);
 
     if (!response.ok) {

@@ -75,7 +75,7 @@
 
 .Search-label {
   color: rgb(255, 255, 255);
-  height: 20px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,4 +116,32 @@ button{
 }
 a{
   color: rgb(255, 255, 255);
+}
+
+@media (max-width: 768px) {
+  .Header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .Nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .Card {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .Search {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 10px;
+  }
+
+  .Card-personaje {
+    width: 100%;
+    max-width: 300px;
+  }
 }
