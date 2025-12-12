@@ -8,26 +8,7 @@ import config from './config/config.js';
 
 const app = express();
 
-const allowedOrigins = [
-  'https://rick-and-morty-react-kdd9.vercel.app',
-  'https://rick-and-morty-react-mocha.vercel.app' 
-];
-
-app.use(cors({
-  origin: function(origin, callback){
-    // permitir requests sin origin 
-    if(!origin) return callback(null, true);
-
-    if(allowedOrigins.indexOf(origin) === -1){
-      const msg = 'El CORS no está permitido para este origen.';
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  },
-  methods: ['GET','POST','PUT','DELETE'],
-  credentials: true
-}));
-           // Para conectarme sin problemas
+app.use(cors());             // Para conectarme sin problemas
 app.use(express.json());     // Para procesar los JSON
 
 
