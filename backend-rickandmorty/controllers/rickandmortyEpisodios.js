@@ -1,4 +1,6 @@
-const BASE_URL = process.env.API_BASE_URL 
+import config from '../config/config.js';
+
+const BASE_URL = config.API_BASE_URL;
 
 export const getRickAndMortyEpisodios = async (req, res, next) => {
    try{
