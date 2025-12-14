@@ -1,6 +1,5 @@
-import config from '../config/config.js';
+const BASE_URL = process.env.API_BASE_URL
 
-const BASE_URL = config.API_BASE_URL;
 
 export  const rickandmortyLugares = async (req, res, next)=>{
     try{
