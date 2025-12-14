@@ -30,3 +30,6 @@ app.use((error, req, res, next) => {
 app.listen(config.port, () => {
   console.log(`Servidor corriendo en el puerto ${config.port}`);
 });
+
+
+export default app;
