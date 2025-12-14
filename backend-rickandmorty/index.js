@@ -1,9 +1,10 @@
-// app.js
+
 import 'dotenv/config'; // Carga las variables del .env
 import express from 'express';
 import cors from 'cors';
 import router from './routes/index.routes.js';
 import config from './config/config.js';
+import e from 'express';
 
 
 const app = express();
@@ -33,8 +34,12 @@ app.use((error, req, res, next) => {
   res.status(500).json({ error: error.message });
 });
 
-app.listen(config.port, () => {
-  console.log(`Servidor corriendo en el puerto ${config.port}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = config.port || 3000;
+    app.listen(PORT, () => {
+        console.log(`🚀 Servidor corriendo localmente en el puerto ${PORT}`);
+    });
+}
 
 
+export default app;
