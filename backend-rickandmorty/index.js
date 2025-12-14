@@ -9,9 +9,13 @@ import config from './config/config.js';
 
 const app = express();
 
+const corsOptions = {
+  origin: ['https://rick-and-morty-react-kdd9.vercel.app', 'http://localhost:3000'], // Tu frontend y tu local
+  optionsSuccessStatus: 200
+};
 
-
-app.use(cors());             // Para conectarme sin problemas
+app.use(cors(corsOptions));
+// app.use(cors());             // Para conectarme sin problemas
 app.use(express.json());     // Para procesar los JSON
 
 
