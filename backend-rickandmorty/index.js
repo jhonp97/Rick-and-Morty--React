@@ -4,7 +4,7 @@ import express from 'express';
 import cors from 'cors';
 import router from './routes/index.routes.js';
 import config from './config/config.js';
-import e from 'express';
+// import e from 'express';
 
 
 const app = express();
@@ -41,3 +41,5 @@ if (process.env.NODE_ENV !== 'production') {
     });
 }
 
+
+export default app;
