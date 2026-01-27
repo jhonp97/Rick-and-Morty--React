@@ -10,7 +10,7 @@ import config from './config/config.js';
 const app = express();
 
 const corsOptions = {
-  origin: ['https://rick-and-morty-react-kdd9.vercel.app', 'http://localhost:3000'], // Tu frontend y tu local
+  origin: ['https://rick-and-morty-react-kdd9.vercel.app', 'http://localhost:3000', 'http://localhost:5173'], // Tu frontend y tu local
   optionsSuccessStatus: 200
 };
 

@@ -1,11 +1,28 @@
 
 import { useState, useEffect } from "react";
 
+
+interface Lugar {
+    id: number;
+    titulo: string;
+    type: string;
+    dimension: string;
+    residentes: Array<string>;
+}
+
+interface LugarApiResponse{
+    results: Lugar[];
+}
+
+interface ErrorType {
+    message: string;
+}
+
 const Lugares = () => {
-    const [lugar, setLugar] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
-    const [page, setPage] = useState(1)
+    const [lugar, setLugar] = useState<Lugar[]>([])
+    const [loading, setLoading] = useState<boolean>(true)
+    const [error, setError] = useState<ErrorType | null>(null)
+    const [page, setPage] = useState<number>(1)
 
 
     useEffect(() => {
@@ -13,7 +30,7 @@ const Lugares = () => {
 
 
 
-        const traerLugares = async () => {
+        const traerLugares = async (): Promise<void> => {
             setLoading(true)
             try {
                 const apiBase = import.meta.env.VITE_API_URL;
@@ -21,15 +38,15 @@ const Lugares = () => {
                 const controller = new AbortController()
                 const option = controller.signal
 
-                const response = await fetch(url, { signal: controller.signal });
+                const response = await fetch(url, { signal: option });
                 if (!response.ok) {
                     throw new Error(`error ${response.status} - ${response.statusText}`)
                 }
-                const data = await response.json();
+                const data = (await response.json()) as LugarApiResponse;
                 setLugar(data.results)
             } catch (erro) {
-                console.log(`error en la ejecucion ${erro}`)
-                setError(erro)
+                console.log( `error en la ejecucion ${erro}`)
+                setError(erro instanceof Error ? {message: erro.message} : {message: "Error desconocido"})
             } finally {
                 setLoading(false)
             }
@@ -44,13 +61,13 @@ const Lugares = () => {
     function Ubicaciones() {
         return (
             <div className="Card">
-                {lugar.map((item) => (
+                {lugar.map((item: Lugar) => (
                     <article className="Card-location" key={item.id}>
-                        <h2>{item.name}</h2>
+                        <h2>{item.titulo}</h2>
                         <img src="https://i.ytimg.com/vi/QbNbCmoSW50/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBsfojVHQdcJSxAx3Cre7_ZoTY77A" width={300} alt={item.name} />
                         <p><strong>{item.type}</strong></p>
                         <p><strong>{item.dimension}</strong></p>
-                        <p><strong>{item.residents.length} habitantes</strong></p>
+                        <p><strong>{item.residentes.length} habitantes</strong></p>
                     </article>
                 ))}
             </div>

@@ -1,5 +1,5 @@
 import Personajes from "@/pages/Personajes";
-import Episodios from '@/pages/Episodios'
+import Episodios from '@/pages/Episodios.tsx'
 import Lugares from '@/pages/Lugares'
 import { useState } from "react";
 
